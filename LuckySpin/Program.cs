@@ -21,11 +21,11 @@ app.UseRouting();
 
 
 //Configure Routing with a general pattern and a default setting if the URL path is left out
- // FIXME:if your have time, add a range(1,9) method to constrain luck between 1 and 9
+ // DONE:if your have time, add a range(1,9) method to constrain luck between 1 and 9
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller}/{action}/{luck}",
+    pattern: "{controller}/{action}/{luck:range(1,9)}",
     defaults: new
     {
         controller = "Spinner",
